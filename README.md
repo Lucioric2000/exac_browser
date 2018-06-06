@@ -36,6 +36,22 @@ Install MongoDB:
     brew install mongodb
     # or
     sudo port install mongodb
+    # or
+    sudo yum install mongodb
+
+Update:
+Since MongoDB version 3.0, in linux it in separate repositories, so that, to install the most actual versions, for example in Centos to install the 
+version 3.6, you should do the following:
+Create the file /etc/yum.repos.d/mongodb-org-3.6.repo, end edit adding the following lines
+```
+[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc```
+then you should install the program with
+`sudo yum install mongodb`
 
 Create a directory to hold your mongo database files: 
 
